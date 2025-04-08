@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import ProductAll from './page/ProductAll'
 import Login from './page/Login'
 import ProductDetail from './page/ProductDetail'
-import Navbar from './conponent/Navbar'
+import Navbar from './component/Navbar'
 
 /*router setting -> routes,route setting */
       /* npm install react-router-dom@6 */
