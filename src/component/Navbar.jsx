@@ -44,7 +44,7 @@ const Navbar = () => {
             )}
         </ul>
         <div className='nav-search-area'>
-            <div className={`nav-input-area ${showInput ? 'active':''}`}>
+            <div className='nav-input-area'>
                 <input className='nav-input' type="text" required/>
                 <label className='nav-label'>제품검색</label>
                 <span className='nav-span'></span>

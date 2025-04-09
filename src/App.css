@@ -19,6 +19,7 @@
   gap: 10px;
   align-items: center;
   justify-content: flex-end;
+  align-self: start;
 }
 .faSearch{
   font-size: 20px;
@@ -33,7 +34,7 @@
 .nav-logo{
   display: flex;
   justify-content: center;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 .nav-menu{
   display: flex;
@@ -185,8 +186,6 @@
 
 
 /* product-card */
-
-@media (max-width:2750px) {
   .card {
     position: relative;
     margin: 20px 0;
@@ -280,7 +279,7 @@
     scale: 1.2;
     transition: 0.5s;
   }
-}
+
 @media (max-width:1720px) {
   /* 카드 기본 설정: 고정 크기, 오버플로우 감추기 */
   .card {
