@@ -14,7 +14,6 @@
 }
 .m-nav-search-area{
   display: none;
-  gap: 10px;
 }
 .nav-login{
   display: flex;
@@ -26,8 +25,6 @@
 }
 .faSearch{
   position: relative;
-  top: 7px;
-  left: 7px;
   font-size: 18px;
   color: #666;
   cursor: pointer;
@@ -229,7 +226,6 @@
 }
 .m-nav-input{
   display: none;
-  gap: 10px;
 }
 
 /* product-all */
@@ -489,12 +485,7 @@ em{
   .m-nav-search-area{
     display: flex;
   }
-  .nav-input:focus ~ .nav-label, .nav-input:valid ~ .nav-label{
-    bottom: 30px;
-  }
-  .nav-span{
-    bottom: 2px;
-  }
+  
   .active{
     display: flex;
   }
@@ -503,18 +494,22 @@ em{
   .m-hamburger {
     display: block;
   }
-
   .nav-menu {
     display: none;
   }
   .product-img-area{
     text-align: center;
   }
-}
-@media (max-width:550px) {
   .m-nav-area{
     flex-direction: column;
   }
+  .m-nav-search-area{
+    position: relative;
+    left: 5px;
+  }
+}
+@media (max-width:550px) {
+  
   .nav-login-area{
     justify-content: flex-start;
   }
@@ -526,13 +521,13 @@ em{
 }
 @media (max-width:455px) {
   .nav-input-area{
-    width: 180px;
+    width: 250px;
   }
   .nav-input{
-    width: 180px;
+    width: 250px;
   }
   .nav-label{
-    font-size: 13px;
+    font-size: 15px;
   }
   .product-img{
     width: 300px;
