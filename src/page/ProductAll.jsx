@@ -16,7 +16,7 @@ const ProductAll = () => {
         getProducts()
     },[])
   return (
-    <div>
+    <div className='mb-5'>
       <Container className=''>
         <Row className=' product-row'>
             {productList.map((item)=>

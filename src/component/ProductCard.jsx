@@ -10,7 +10,7 @@ const ProductCard = ({item}) => {
     const navigate = useNavigate()
     const showDetail=()=>{
       // console.log("zmfflr?")
-      navigate(`/product/${item.id}`)
+      navigate(`/product/${item?.id}`)
     }
   return (
       <div className='card'>
