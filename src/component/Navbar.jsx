@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const Navbar = ({authenticate, setAuthenticate}) => {
     const [showMobileMenu,setShowMobileMenu] = useState(false)
     const [showInput, setShowInput]=useState(false)
+    const [searchKeyword, setSearchKeyword] = useState("")
     const menuList = ["Women", "Men", "Baby", "Kids", "Home", "Sale"]
     const navigate = useNavigate()
     const goToLogin=()=>{
@@ -22,6 +23,15 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     }
     const goToHome =()=>{
       navigate('/')
+    }
+    const search=(e)=>{
+      // console.log("검색하게?")
+      if(e.key==="Enter"){
+        // console.log("this key?",e.key)
+        let keyword = e.target.value
+        // console.log(keyword)
+        navigate(`/?q=${keyword}`)
+      }
     }
   return (
     <div className='nav-area'>
@@ -47,11 +57,10 @@ const Navbar = ({authenticate, setAuthenticate}) => {
             </div>
             <div className={`m-nav-input ${showInput? 'active':''}`}>
               <div className='nav-input-area'>
-                <input className='nav-input' type="text" required/>
+                <input onKeyDown={(e)=>search(e)} className='nav-input' type="text" required/>
                 <label className='nav-label'>제품검색</label>
                 <span className='nav-span'></span>
               </div>
-              <Button variant='danger'>검색</Button>
             </div>
           </div>
           {/* 모바일 서치 */}
@@ -75,7 +84,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         </ul>
         <div className='nav-search-area'>
             <div className='nav-input-area'>
-                <input className='nav-input' type="text" required/>
+                <input onKeyDown={(e)=>search(e)} className='nav-input' type="text" required/>
                 <label className='nav-label'>제품검색</label>
                 <span className='nav-span'></span>
             </div>

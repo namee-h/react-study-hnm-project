@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard'
 import { Col, Container, Row } from 'react-bootstrap'
+import { useSearchParams } from 'react-router-dom'
 
 const ProductAll = () => {
     const [productList, setProductList] = useState([])
+    const [query,setQuery] = useSearchParams()
     const getProducts = async()=>{
         // let url = "http://localhost:5000/products"
-        let url = "https://my-json-server.typicode.com/namee-h/react-study-db.json/products"
+        let searchQuery =query.get('q') || ""
+        // console.log("쿼리값은?",searchQuery)
+        let url = `https://my-json-server.typicode.com/namee-h/react-study-db.json/products?q=${searchQuery}`
         let res = await fetch(url)
         let data = await res.json()
         // console.log("data",data)
@@ -14,7 +18,7 @@ const ProductAll = () => {
     } 
     useEffect(()=>{
         getProducts()
-    },[])
+    },[query])
   return (
     <div className='mb-5'>
       <Container className=''>

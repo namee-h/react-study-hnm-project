@@ -14,7 +14,6 @@
 }
 .m-nav-search-area{
   display: none;
-  gap: 10px;
 }
 .nav-login{
   display: flex;
@@ -26,8 +25,6 @@
 }
 .faSearch{
   position: relative;
-  top: 7px;
-  left: 7px;
   font-size: 18px;
   color: #666;
   cursor: pointer;
@@ -229,7 +226,6 @@
 }
 .m-nav-input{
   display: none;
-  gap: 10px;
 }
 
 /* product-all */
@@ -365,6 +361,9 @@ em{
   .product-box{
     padding: 10px;
   }
+  .product-img-area{
+    text-align: end;
+  }
 .product-img{
   width: 400px;
   height: auto;
@@ -393,8 +392,8 @@ em{
 }
 .dropdown-item:focus,
 .dropdown-item:hover {
-  background-color: #dc3545;  /* Bootstrap danger 색 */
-  color: #fff;
+  background-color: #dc3545 !important;  /* Bootstrap danger 색 */
+  color: #fff !important;
 }
 .size-toggle-menu {
   width: 120px !important;
@@ -408,12 +407,16 @@ em{
   margin-top: 80px;
 }
 .cart-btn{
-  background-color: white;
-  color: #666;
+  background-color: white !important;
+  color: #666 !important;
   border: 1px solid #dc3545;
   width: 100%;
   transition: all 0.3s ease;
   font-weight: bold;
+}
+.cart-btn:hover{
+  background-color: #dc3545 !important;
+  color: white !important;
 }
 @media (max-width:1720px) {
   /* 카드 기본 설정: 고정 크기, 오버플로우 감추기 */
@@ -482,12 +485,7 @@ em{
   .m-nav-search-area{
     display: flex;
   }
-  .nav-input:focus ~ .nav-label, .nav-input:valid ~ .nav-label{
-    bottom: 30px;
-  }
-  .nav-span{
-    bottom: 2px;
-  }
+  
   .active{
     display: flex;
   }
@@ -496,15 +494,22 @@ em{
   .m-hamburger {
     display: block;
   }
-
   .nav-menu {
     display: none;
   }
-}
-@media (max-width:550px) {
+  .product-img-area{
+    text-align: center;
+  }
   .m-nav-area{
     flex-direction: column;
   }
+  .m-nav-search-area{
+    position: relative;
+    left: 5px;
+  }
+}
+@media (max-width:550px) {
+  
   .nav-login-area{
     justify-content: flex-start;
   }
@@ -516,12 +521,16 @@ em{
 }
 @media (max-width:455px) {
   .nav-input-area{
-    width: 180px;
+    width: 250px;
   }
   .nav-input{
-    width: 180px;
+    width: 250px;
   }
   .nav-label{
-    font-size: 13px;
+    font-size: 15px;
+  }
+  .product-img{
+    width: 300px;
+    height: auto;
   }
 }

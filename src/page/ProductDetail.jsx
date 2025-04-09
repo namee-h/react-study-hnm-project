@@ -26,11 +26,11 @@ const ProductDetail = () => {
   return (
     <Container className='product-box mb-5'>
       <Row>
-        <Col className='text-end'>
+        <Col className='product-img-area borders'>
           <img className='product-img' src={product?.img} alt="" srcset="" />
         </Col>
       
-        <Col className=''>
+        <Col className='mt-3'>
         <div className='product-top'>
             <span>{product?.new===true?"✨ new":""}</span>
             <div>
