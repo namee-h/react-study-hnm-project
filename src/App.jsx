@@ -1,10 +1,13 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import ProductAll from './page/ProductAll'
 import Login from './page/Login'
-import ProductDetail from './page/ProductDetail'
+// import ProductDetail from './page/ProductDetail'
 import Navbar from './component/Navbar'
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import { useState } from 'react'
+import PrivateRoute from "./route/PrivateRoute";
 
 /*router setting -> routes,route setting */
       /* npm install react-router-dom@6 */
@@ -34,15 +37,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
       /* useSearchPrams 사용하여 검색기능 만들기 */
 
 function App() {
-  
-
+  const [authenticate, setAuthenticate]=useState(false)
   return (
     <>
-      <Navbar/>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
       <Routes>
         <Route path='/' element={<ProductAll/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/product/:id' element={<ProductDetail/>}/>
+        <Route path='/login' element={<Login setAuthenticate={setAuthenticate}/>}/>
+        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}/>}/>
       </Routes>
     </>
   )

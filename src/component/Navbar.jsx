@@ -3,11 +3,25 @@ import React, { useState } from 'react'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 
-const Navbar = () => {
+const Navbar = ({authenticate, setAuthenticate}) => {
     const [showInput, setShowInput]=useState(false)
     const menuList = ["Women", "Men", "Baby", "Kids", "Home", "Sale"]
+    const navigate = useNavigate()
+    const goToLogin=()=>{
+      if(authenticate!==true){
+        navigate('/login')
+      }else{
+        setAuthenticate(false)
+        navigate('/login')
+      }
+      
+    }
+    const goToHome =()=>{
+      navigate('/')
+    }
   return (
     <div className='nav-area'>
       <div className='nav-login-area'>
@@ -26,12 +40,12 @@ const Navbar = () => {
           </div>
         </div>
         {/* 모바일 서치 */}
-        <div className='nav-login'>
+        <div className='nav-login' onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} size="sm"/>
-          <div>로그인</div>
+          <div>{authenticate!==true?"로그인":"로그아웃"}</div>
         </div>
       </div>
-      <div className='nav-logo'>
+      <div onClick={goToHome} className='nav-logo'>
         <img
             width={100}
             src="https://blog.kakaocdn.net/dn/Yt80C/btqDeJAYUBo/JQbTuukRladq2AUOeqgiEK/img.jpg"
