@@ -26,7 +26,7 @@ const ProductDetail = () => {
   return (
     <Container className='product-box mb-5'>
       <Row>
-        <Col className='product-img-area borders'>
+        <Col className='product-img-area'>
           <img className='product-img' src={product?.img} alt="" srcset="" />
         </Col>
       
