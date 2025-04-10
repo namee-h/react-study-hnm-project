@@ -1,7 +1,7 @@
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Dropdown, Row, Spinner } from 'react-bootstrap'
+import { Button, Col, Container, Dropdown, Row } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const ProductDetail = ({loading, setLoading}) => {
@@ -26,13 +26,6 @@ const ProductDetail = ({loading, setLoading}) => {
   },[])
   return (
     <Container className='product-box mb-5'>
-       {/* <div className={`product-loading ${loading? "":"display-none"}`}>
-          <Spinner animation="grow" variant="danger"/>
-          <Spinner animation="grow" variant="danger"/>
-          <Spinner animation="grow" variant="danger"/>
-          <Spinner animation="grow" variant="danger"/>
-          <Spinner animation="grow" variant="danger"/>
-        </div> */}
       <Row className={`${loading? "display-none":""}`}>
         <Col className='product-img-area'>
           <img className='product-img' src={product?.img} alt="" srcset="" />
