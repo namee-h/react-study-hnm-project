@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -32,6 +31,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         // console.log(keyword)
         navigate(`/?q=${keyword}`)
       }
+      
     }
   return (
     <div className='nav-area'>
