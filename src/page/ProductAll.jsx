@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard'
-import { Col, Container, Row, Spinner } from 'react-bootstrap'
+import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
 
 const ProductAll = ({loading, setLoading}) => {
@@ -33,7 +33,7 @@ const ProductAll = ({loading, setLoading}) => {
           <Spinner animation="grow" variant="danger"/>
           <Spinner animation="grow" variant="danger"/>
         </div>
-        {productList.length === 0 ? (<div className={`no-result text-center mt-5 fs-4 text-muted ${loading? "display-none":""}`}>찾으시는 제품이 없습니다🥲</div>) : (
+        {productList.length === 0 ? (<Alert key='danger' variant='danger' className={` text-center mt-5 fs-4 text-muted ${loading? "display-none":""}`}>찾으시는 제품이 없습니다🥲</Alert>) : (
         <Row className=' product-row'>
             {productList.map((item)=>
             <Col className={`card-col ${loading? "display-none":""}`} lg={3} md={6} sm={12}>

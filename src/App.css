@@ -241,12 +241,7 @@
   justify-content: center;
   align-items: center; 
 }
-.no-result {
-  padding: 100px 0;
-  font-size: 20px;
-  color: white !important;
-  background-color: #d22b2b92;
-}
+
 .main{
   display: flex;
   flex-direction: column;
