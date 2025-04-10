@@ -2,9 +2,9 @@ import React from 'react'
 import ProductDetail from '../page/ProductDetail'
 import { Navigate } from 'react-router-dom'
 
-const PrivateRoute = ({authenticate}) => {
+const PrivateRoute = ({loading, setLoading, authenticate}) => {
   return (
-    authenticate===true? <ProductDetail/>:<Navigate to='/login'/>
+    authenticate===true? <ProductDetail loading={loading} setLoading={setLoading} />:<Navigate to='/login'/>
   )
 }
 
