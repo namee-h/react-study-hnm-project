@@ -4,19 +4,17 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Dropdown, Row } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const ProductDetail = ({loading, setLoading}) => {
+const ProductDetail = () => {
   let {id} = useParams()
   const navigate = useNavigate()
   const [product, setProduct] = useState(null)
   const [selectedSize, setSelectedSize] = useState("사이즈 선택")
   const getProductDetail= async()=>{
-    setLoading(true)
     let url =`https://my-json-server.typicode.com/namee-h/react-study-db.json/products/${id}`
     let res = await fetch(url)
     let data = await res.json()
     // console.log("ddd",data)
     setProduct(data)
-    setLoading(false)
   }
   const goToProductsAll=()=>{
     navigate('/')
@@ -26,7 +24,7 @@ const ProductDetail = ({loading, setLoading}) => {
   },[])
   return (
     <Container className='product-box mb-5'>
-      <Row className={`${loading? "display-none":""}`}>
+      <Row>
         <Col className='product-img-area'>
           <img className='product-img' src={product?.img} alt="" srcset="" />
         </Col>
@@ -40,8 +38,8 @@ const ProductDetail = ({loading, setLoading}) => {
          </div>
         <div className='product-info'>
             <em>{product?.choice===true? "Conscious choice":"\u00A0"}</em>
-            <div>{product?.title}</div>
-            <div>₩ {Number(product?.price).toLocaleString("ko-KR")}</div>
+            <div>{product?.title || "\u00A0"}</div>
+            <div>₩ {Number(product?.price ||"\u00A0").toLocaleString("ko-KR")}</div>
 
             <Dropdown>
               <Dropdown.Toggle className='size-toggle' variant="danger" id="dropdown-basic">
